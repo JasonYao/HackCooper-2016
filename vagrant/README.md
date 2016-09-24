@@ -15,6 +15,8 @@ real-time on the development server.
 ### Download virtualbox
 ```sh
 # OSX only
+brew update && brew upgrade
+brew tap caskroom/cask
 brew cask install virtualbox
 ```
 OR
