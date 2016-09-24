@@ -45,7 +45,7 @@ server {
 	location / {
 		include         uwsgi_params;
 		# Sets the socket to a unix socket (default, faster)
-		uwsgi_pass	unix:///run/uwsgi/Site.sock;
+		uwsgi_pass	unix:///run/uwsgi/TakeUp.sock;
 
 #		# Sets the socket to a websocket (slower, but backup if sockets fuck up)
 #		uwsgi_pass	127.0.0.1:3031;

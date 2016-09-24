@@ -17,6 +17,7 @@ virtualenv_packages=(django uwsgi psycopg2)
 db_username="dev"
 db_password="password"
 db_name="dev"
+site_name="TakeUp"
 
 ###
 # Helper functions
@@ -113,7 +114,7 @@ function check_nginx {
 	fi
 
 # Links the correct secret settings if not already
-if [[ -f /server/website/DreamLeague/settings_secret.py ]]; then
+if [[ -f /server/website/"$site_name"/settings_secret.py ]]; then
 	success "Linking: Secrets are already linked"
 else
 	info "Linking: Secrets are not yet linked, using dev values for now"
@@ -139,7 +140,7 @@ else
 		echo "}"
 		echo "EMAIL_BACKEND = "anymail.backends.mailgun.MailgunBackend"  # or sendgrid.SendGridBackend, or...
 		echo "DEFAULT_FROM_EMAIL = \"example@example.com\"  # if you don't already have this in settings"
-	} >> /server/website/DreamLeague/settings_secret.py ; then
+	} >> /server/website/"$site_name"/settings_secret.py ; then
 		success "Linking: Secrets are now configured for a dev environment"
 	else
 		fail "Linking: Secrets failed to be filled with dev values"
