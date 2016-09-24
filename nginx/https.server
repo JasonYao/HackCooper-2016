@@ -1,0 +1,53 @@
+##########################
+# HackCooper 2016 Server #
+##########################
+
+######################################
+# Server Redirect from HTTP to HTTPS #
+######################################
+server {
+	listen 80 default_server;
+	listen [::]:80 ipv6only=on;
+	listen 443 ssl http2 default_server;
+	listen [::]:443 ssl http2 ipv6only=on;
+
+	# TLS certs
+	ssl_certificate /etc/letsencrypt/live/www.TODO.gg/fullchain.pem; # TLS certs based off of LE
+	ssl_certificate_key /etc/letsencrypt/live/www.TODO.gg/privkey.pem; # TLS certs based off of LE
+
+	server_name TODO.gg;
+	return 301 https://www.dreamleague.gg$request_uri;
+}
+
+######################
+# Global TLS Servers #
+######################
+server {
+	listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+
+	# TLS certs
+	ssl_certificate /etc/letsencrypt/live/www.TODO.gg/fullchain.pem; # TLS certs based off of LE
+	ssl_certificate_key /etc/letsencrypt/live/www.TODO.gg/privkey.pem; # TLS certs based off of LE
+
+	server_name www.TODO.gg;
+	root /server/website/TODO;
+
+	##### Implements Caching #####
+	location ~* \.(js|css|png|jpg|gif|ico)(\?ver=[0-9.]+)?$ {expires 1y;}
+
+	# Serves static files for the dreamleague application
+	location /static {
+		root /server/website;
+	}
+
+	# Actually serves through the uwsgi protocol via a unix socket
+	location / {
+		include         uwsgi_params;
+		# Sets the socket to a unix socket (default, faster)
+		uwsgi_pass	unix:///run/uwsgi/Site.sock;
+
+#		# Sets the socket to a websocket (slower, but backup if sockets fuck up)
+#		uwsgi_pass	127.0.0.1:3031;
+	}
+} ##### End of the Global TLS Server Block #####
