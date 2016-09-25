@@ -261,12 +261,17 @@ header{
 }
 
 #phone_photo{
-	padding-top: 100px;
+	/* Maintain padding-top to preserve space between navbar and the photo */
+	padding-top: 12vh;
+}
+
+#phone_photo .img-responsive {
+    margin: 0 auto;
 }
 
 #learn_to{
 	margin-left:30px;
-	margin-top:20vh;
+	margin-top:15vh;
 	font-size:3.75vw;
 	text-align:left;
 	font-weight:bold;
@@ -294,9 +299,7 @@ input[type=submit]{
   -webkit-appearance:none;
 }
 input[type=text]{
-  border: 3px solid white;
   margin-right: 8px;
-  color: white;
   padding: 15px 20px;
   border-radius: 0px 0px 0px 0px;
 }
@@ -445,28 +448,9 @@ input[type="submit"]::-webkit-search-results-decoration {
 }
 
 @media screen and (max-width: 1011px){
-	.left_side_screen{
-		width:100%;
-		float:none;
-		margin-bottom:5vh;
-	}
-	.right_side_screen{
-		width:100%;
-		float:none;
-	}
-
-	#phone_photo{
-		width:35%;
-		padding-top: 100px;
-		margin-left:32.5%;
-
-	}
 	#learn_to{
-		margin-top:10vh;
-		font-size:6.5vw;
 		text-align:left;
 		font-weight:bold;
-		margin-left:20%;
 	}
 
 	#learn_to_subtitle{
@@ -556,39 +540,14 @@ input[type="submit"]::-webkit-search-results-decoration {
 	border-color:rgba(255,255,255,1);
 }
 
-	.rw-words span{
-		margin-left:10vw;
-		width:350px;
-
-	}
-
-	#learn_to{
-		font-size:32.5px;
-		margin-left:100px;
-
-	}
-	#learn_to_subtitle{
-		font-size:20px;
-		width:500px;
-
-	}
-	#ready{
-		font-size:16.25px;
-		width:500px;
-	}
-	#phone_photo{
-		width:175px;
-		margin-left:155px;
-	}
-	#email_holder{
-		width:500px;
-	}
-}
 
 .btn-default{
 	background-color: #b0d8fb;
 }
 
+.input-lg{
+	font-size: 2vw;
+}
 .navbar-default{
 	background-color: transparent;
 }
