@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "TakeUp": {
+      "applicationId": "fX6GMV2N05tEl6Kpa9vVWZS5D6gWKlJ3Pxm7KODm"
+    },
+    "_default": {
+      "link": "TakeUp"
+    }
+  }
+}
