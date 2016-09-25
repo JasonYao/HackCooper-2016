@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Take Up | Home</title>
+	  <meta name='viewport' content='width=device-width, initial-scale=.5, user-scalable=0' >
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href='css/style.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body id="body" onresize="refreshWindow()">
+<!--	<div class="background_1">
+	</div>
+	<div class="background_2">
+	</div>
+	<div class="background_3">
+	</div>
+	<div class="background_4">
+	</div>
+	<div class="background_5">
+	</div>
+	<div class="background_6">
+	</div>
+-->
+
+	<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+			<div class="row">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" id="home_button" href="#">
+							<img class="img-responsive" id="logo" src="img/logo-white.png" />
+						</a>
+        </div>
+        <center>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="password" placeholder="Password">
+                    </div>
+                    <button id="login-button" type="submit" class="btn btn-default">Log In</button>
+                </form>
+            </div>
+        </center>
+			</div>
+    </div>
+	</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-5">
+			<img id="phone_photo" src="img/6s.png">
+		</div>
+
+		<div class="col-xs-7">
+			<section id="learn_to">
+				Learn to
+				<div class="rw-words rw-words-1">
+							<span>do anything.</span>
+							<span>bartend.</span>
+							<span>produce music.</span>
+							<span>go sailing.</span>
+							<span>surf big swells.</span>
+							<span>make sushi.</span>
+					</div>
+			</section>
+			<section id="learn_to_subtitle">
+				From people near you.
+			</section>
+			<section id="ready">
+				Tell me when it's ready.
+			</section>
+
+			<form role="form">
+				<hr>
+				<div class="row">
+					<div class="col-xs-5 col-md-5 col-lg-5 col-xs-offset-1 col-md-offset-1 col-lg-offset-1">
+						<div class="form-group">
+							<input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+						</div>
+					</div>
+					<div class="col-xs-5 col-md-5 col-lg-5">
+						<div class="form-group">
+							<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1">
+						<div class="form-group">
+							<input type="text" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="3">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1">
+						<div class="form-group">
+							<input type="text" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="4">
+						</div>
+					</div>
+				</div>
+
+				<hr/>
+				<div class="row">
+					<div class="col-xs-4 col-xs-offset-4"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+	<div id="about_content">
+		<p class="about_text"> Our mission is to rekindle people’s desire to learn. Find interesting hobbies and classes in your metropolitan area. <p>
+	</div>
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+	$('#home_button').click(function() {
+		location.reload();
+	});
+	</script>
+
+	<!-- <script type="text/javascript">
+  	function submitEmail() {
+    Parse.initialize("fX6GMV2N05tEl6Kpa9vVWZS5D6gWKlJ3Pxm7KODm", "ffImxUNAyArCAu2srJegIt80V9T3kchoev5nE6SU");
+    var BetaEmailAddress = Parse.Object.extend("BetaEmailAddress");
+    var emailAddress = document.getElementById("enterEmailAddressInput").value;
+    console.log(emailAddress)
+    var betaEmailAddress = new BetaEmailAddress();
+      betaEmailAddress.save({email: emailAddress}, {
+      success: function(object) {
+        console.log(object)
+      },
+      error: function(model, error) {
+        console.log("c")
+        $(".error").show();
+      }
+    });
+    return false;
+  }
+</script> -->
+
+</body>
+</html>
