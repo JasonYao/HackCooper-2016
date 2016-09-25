@@ -1,0 +1,32 @@
+/* General Background Styling */
+.first-section { height: 80vh; }
+section { height: 100vh;}
+h1 {
+	/* Adds a stroke around the text */
+    text-shadow: 1px 1px 0 #eee, 1px -1px 0 #eee, -1px 1px 0 #eee, -1px -1px 0 #eee;
+}
+
+/* Footer Styling */
+.copyright {
+	text-align: center;
+	position: relative;
+	bottom: 0px;
+	width: 100%;
+}
+
+/* Generic Table Styling */
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+   color: #222;
+}
+
+/* Navbar Styling */
+.profile {
+	position: absolute;
+	z-index: 2;
+	top: 5px;
+	right: 5px;
+}
+
+#profile_thumbnail {
+	height: 98px;
+}

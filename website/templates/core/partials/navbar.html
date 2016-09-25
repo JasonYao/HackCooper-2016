@@ -1,0 +1,37 @@
+<!-- Site Navigation Navbar -->
+<nav class="navbar navbar-dark bg-inverse">
+	<a class="navbar-brand" href="#">DreamLeague</a>
+	<ul class="nav navbar-nav">
+	{% if user.is_authenticated %}
+		<li class="nav-item"><a class="nav-link" href="/lobby/">Lobby</a></li>
+		<li class="nav-item"><a class="nav-link" href="/lineups/">My Lineups</a></li>
+		<li class="nav-item"><a class="nav-link" href="/events/">My Events</a></li>
+
+		<!-- Profile information thumbnail -->
+		<div class="dropdown profile pull-xs-right">
+			<button class="btn btn-secondary dropdown-toggle" id="profile_thumbnail" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<h4 class="card-title">Welcome back, {{ user.get_username }}</h4>			
+				<span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+				<p class="card-text">Balance: {{ user.profile.balance }}</p>
+				<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+			</button>
+			<div class="dropdown-menu" aria-labelledby="profile_thumbnail">
+				<a class="dropdown-item" href="/profile/">My Account</a>
+				<a class="dropdown-item" href="/settings/">Settings</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/tutorial/">How To Play</a>
+				<a class="dropdown-item" href="/faqs/">FAQs</a>
+				<a class="dropdown-item" href="/help/">Contest Formats &amp; Rules</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/logout/">Logout</a>
+			</div>
+		</div>		
+
+	{% else %}
+		<li class="nav-item pull-xs-right"><a class="nav-link" href="/tutorial/">How To Play</a></li>
+		<li class="nav-item pull-xs-right"><a class="nav-link" href="/contests/">See Contests</a></li>
+		<li class="nav-item pull-xs-right"><a class="nav-link" href="/faqs/">FAQs</a></li>
+		<li class="nav-item pull-xs-right"><a class="nav-link" href="/register/">Register</a></li>
+		<li class="nav-item pull-xs-right"><a class="nav-link" href="/login/">Login</a></li>
+	{% endif %}
+</ul>
