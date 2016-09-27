@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% load staticfiles %}
+
+{% block title %}TakeUp.io | Account Activation Successful{% endblock %}
+{% block opengraph_title %}TakeUp.io | Account Activation Successful{% endblock %}
+
+{% block page_specific_meta %}
+	<meta http-equiv="refresh" content="10;url=/dashboard/" />
+{% endblock %}
+
+{% block page_specific_css %}
+<!-- Page-specific CSS styling for: Home -->
+	<link rel="stylesheet" type="text/css" href="{% static 'core/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="first-section" style="background: url('https://images3.alphacoders.com/424/42467.jpg') no-repeat center center fixed; background-size: cover;">
+	<h1>Account Activation Successful</h1>
+	<p>Thanks for activating your account! You are now logged in, and can begin immediately!</p>
+	<p>You'll be automatically redirected to the <a href="/dashboard/">dashboard</a> in 10 seconds.</p>
+</section>
+
+{% endblock %}

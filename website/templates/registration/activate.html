@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+{% load staticfiles %}
+
+{% block title %}TakeUp.io | Invalid Activation Code{% endblock %}
+{% block opengraph_title %}TakeUp.io | Invalid Activation Code{% endblock %}
+
+{% block page_specific_css %}
+<!-- Page-specific CSS styling for: Home -->
+	<link rel="stylesheet" type="text/css" href="{% static 'core/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="first-section" style="background: url('https://images3.alphacoders.com/424/42467.jpg') no-repeat center center fixed; background-size: cover;">
+	<h1>Invalid Account Activation Key</h1>
+	<p>Sorry, it looks like your activation key is invalid, please double-check the link you entered, and try again.</p>
+	<p>Activation key attempted: </span>{{ activation_key }}</span></p>
+	<p>
+		{# Utilises ROT13 for email obfuscation to avoid spam #}
+		If you continue to have issues with this, please don't hesitate to send an email to
+		<span id="obf"><script>document.getElementById("obf").innerHTML="<n uers=\"znvygb:Fhccbeg@gnxrhc.vb?fhowrpg=Vainyvq Npgvingvba Xrl\" gnetrg=\"_oynax\"></n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});document.body.appendChild(eo);</script>
+<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">oi.puekat@troppuS</span></noscript></span>
+	</p>
+	<p>Click <a href="/">here</a> to head back to the home page.</p>
+</section>
+{% endblock %}

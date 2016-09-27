@@ -15,3 +15,9 @@ def index(request):
     """
     return render(request, 'core/index.html', {})
 
+@login_required
+def dashboard(request):
+    """
+    Renders the dashboard view
+    """
+    return render(request, 'core/dashboard.html', {})

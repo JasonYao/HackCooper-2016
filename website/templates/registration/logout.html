@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% load staticfiles %}
+
+{% block title %}TakeUp.io | Logout{% endblock %}
+{% block opengraph_title %}TakeUp.io | Logout{% endblock %}
+
+{% block page_specific_meta %}
+<meta http-equiv="refresh" content="5;url=/" />
+{% endblock %}
+
+{% block page_specific_css %}
+<!-- Page-specific CSS styling for: Home -->
+	<link rel="stylesheet" type="text/css" href="{% static 'core/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="first-section" style="background: url('https://images3.alphacoders.com/424/42467.jpg') no-repeat center center fixed; background-size: cover;">
+
+	<h1>Logged out</h1>
+	<p>Thanks for checking us out, we hope to see you back soon!</p>
+	<p>You will be redirected back to the <a href="{{ request.get_host }}">home</a> page in 5 seconds.</p>
+</section>
+{% endblock %}

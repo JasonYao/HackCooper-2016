@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% load staticfiles %}
+
+{% block title %}TakeUp.io | Registration Successful{% endblock %}
+{% block opengraph_title %}TakeUp.io | Registration Successful{% endblock %}
+
+{% block page_specific_css %}
+<!-- Page-specific CSS styling for: Home -->
+	<link rel="stylesheet" type="text/css" href="{% static 'core/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="first-section" style="background: url('https://images3.alphacoders.com/424/42467.jpg') no-repeat center center fixed; background-size: cover;">
+	<h1>Account Registration Successful</h1>
+	<p>Thanks for signing up! You should receive an email in a little bit to finish up your registration process.</p>
+	<p>Click <a href="/">here</a> to head back to the home page.</p>
+</section>
+{% endblock %}
