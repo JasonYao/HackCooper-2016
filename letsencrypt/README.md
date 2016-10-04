@@ -40,7 +40,11 @@ sudo crontab -e
 
 1.) Scroll to the bottom, and paste the following code on a new line:
 ```sh
-0 0 1 * * /bin/bash /server/letsEncrypt/run.sh
+# Dryrun runs it twice a day for status checking
+0 */12 * * * /bin/bash /server/letsencrypt/dryrun.sh
+
+# Actual runs it once a month
+0 0 1 * * /bin/bash /server/letsencrypt/setup.sh
 ```
 
 2.) hit `ENTER` again so there's a newline at the end of the file, then save your work.

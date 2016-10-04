@@ -25,8 +25,8 @@ function fail () {
 }
 
 # Runs through a dry run
-if /server/letsencrypt/build/certbot-auto --config /etc/letsencrypt/cli.ini --dry-run --agree-tos certonly > /server/letsencrypt/logs/letsEncrypt-"$(date +"%d-%m-%y")".log ; then
-	success "Letsencrypt: Dry run was a success" > /server/letsencrypt/logs/letsEncrypt-"$(date +"%d-%m-%y")".log
+if /server/letsencrypt/build/certbot-auto --config /etc/letsencrypt/cli.ini --dry-run --agree-tos certonly > /server/letsencrypt/logs/dry/letsEncrypt-"$(date +"%d-%m-%y-%H")".log ; then
+	success "Letsencrypt: Dry run was a success" > /server/letsencrypt/logs/dry/letsEncrypt-"$(date +"%d-%m-%y-%H")".log
 else
-	fail "Letsencrypt: Dry run failed" > /server/letsencrypt/logs/letsEncrypt-"$(date +"%d-%m-%y")".log
+	fail "Letsencrypt: Dry run failed" > /server/letsencrypt/logs/dry/letsEncrypt-"$(date +"%d-%m-%y-%H")".log
 fi
