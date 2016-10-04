@@ -12,9 +12,14 @@ server {
 
 	server_name _;
 
-	# Serves static files for the dreamleague application
+	# Serves static files for the application
 	location /static {
 		alias /server/website/static;
+	}
+
+	# Sets up allowing the acme challenge for letsencrypt
+	location /.well-known/acme-challenge {
+		alias /usr/share/nginx/html/.well-known/acme-challenge;
 	}
 
 	# Actually serves through the uwsgi protocol via a unix socket
